@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node
+  labels:
+    name: node-deploy
+  namespace: deploy
+spec:
+  selector:
+    matchLabels:
+      app: nodeapp
+  template:
+    metadata:
+      labels:
+        app: nodeapp
+    spec:
+      containers:
+      - name: nodeapp
+        image: elnabawy/nodeapp
+        ports:
+        - containerPort: 8000
+        readinessProbe:
+          tcpSocket:
+            port: 8000
+        volumeMounts:
+          - mountPath: /app/.env
+            name: node-env
+            subPath: .env
+      volumes:
+        - name: node-env
+          configMap:
+            name: node-env
+            items:
+              - key: .env
+                path: .env

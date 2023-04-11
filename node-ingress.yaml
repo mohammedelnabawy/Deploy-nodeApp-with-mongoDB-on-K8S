@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: node-ingress
+  labels:
+    name: node-ingress
+  namespace: deploy
+spec:
+  ingressClassName: nginx
+  defaultBackend:
+    service:
+        name: node-svc
+        port: 
+            number: 80

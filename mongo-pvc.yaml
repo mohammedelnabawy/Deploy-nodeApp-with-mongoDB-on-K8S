@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc
+  labels:
+    name: mongo-pvc
+  namespace: deploy
+spec:
+  resources:
+    requests:
+      storage: 100Mi
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
