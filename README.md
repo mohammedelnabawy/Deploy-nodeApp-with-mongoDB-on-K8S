@@ -14,3 +14,43 @@ docker login
 ```
 docker push elnabawy/nodeapp
 ```
+## Getting Started
+1. Create deploy NameSpace
+```
+kubectl apply -f namespace.yaml
+```
+2. Create persistent volume and persistent volume claim to store mongoDB data outside the node.
+```
+kubectl apply -f mongo-pv.yaml
+```
+```
+kubectl apply -f mongo-pvc.yaml
+```
+3. Create secret mainfest file that have mongoDB credintial
+```
+kubectl apply -f mongo-secret.yaml
+```
+4. Create mongoDB deployment
+```
+kubectl apply -f mongo-deployment.yaml
+```
+5. Create ClusterIP service for mongoDB deployment
+```
+kubectl apply -f mongo-svc.yaml
+```
+6. Crete ConfigMap mainfest file that have node application enviroment variables
+```
+kubectl apply -f node-configmap.yaml
+```
+7. Crete nodeapp deployment
+```
+kubectl apply -f node-deployment.yaml
+```
+8. Crete ClusterIP service for nodeapp
+```
+kubectl apply -f node-svc.yaml
+```
+9. Crete ingress mainfest file to connect from outside the cluster 
+```
+kubectl apply -f node-ingress.yaml
+```
