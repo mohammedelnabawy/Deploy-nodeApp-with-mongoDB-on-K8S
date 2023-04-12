@@ -53,7 +53,7 @@ kubectl apply -f node-deployment.yaml
 ```
 kubectl apply -f node-svc.yaml
 ```
-9. Create ingress manifest file to connect from outside the cluster 
+9. Create ingress manifest file to connect to the node application from outside the cluster
 ```
 kubectl apply -f node-ingress.yaml
 ```
