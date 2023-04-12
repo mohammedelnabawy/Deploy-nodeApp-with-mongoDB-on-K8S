@@ -26,7 +26,7 @@ kubectl apply -f mongo-pv.yaml
 ```
 kubectl apply -f mongo-pvc.yaml
 ```
-3. Create secret mainfest file that have mongoDB credintial
+3. Create secret manifest file that has mongoDB credential
 ```
 kubectl apply -f mongo-secret.yaml
 ```
@@ -38,7 +38,7 @@ kubectl apply -f mongo-deployment.yaml
 ```
 kubectl apply -f mongo-svc.yaml
 ```
-6. Crete ConfigMap mainfest file that have node application enviroment variables
+6. Create ConfigMap manifest file that has node application environment variables
 ```
 kubectl apply -f node-configmap.yaml
 ```
