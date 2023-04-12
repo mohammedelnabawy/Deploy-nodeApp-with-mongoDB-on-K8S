@@ -45,15 +45,15 @@ kubectl apply -f mongo-svc.yaml
 ```
 kubectl apply -f node-configmap.yaml
 ```
-7. Crete nodeapp deployment
+7. Create nodeapp deployment
 ```
 kubectl apply -f node-deployment.yaml
 ```
-8. Crete ClusterIP service for nodeapp
+8. Create ClusterIP service for nodeapp
 ```
 kubectl apply -f node-svc.yaml
 ```
-9. Crete ingress mainfest file to connect from outside the cluster 
+9. Create ingress manifest file to connect from outside the cluster 
 ```
 kubectl apply -f node-ingress.yaml
 ```
