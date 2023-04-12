@@ -19,6 +19,9 @@ docker push elnabawy/nodeapp
 ```
 kubectl apply -f namespace.yaml
 ```
+```
+kubectl config set-context --current --namespace deploy
+```
 2. Create persistent volume and persistent volume claim to store mongoDB data outside the pod.
 ```
 kubectl apply -f mongo-pv.yaml
